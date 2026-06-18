@@ -30,7 +30,7 @@ def main():
     model, tokenizer = FastLanguageModel.from_pretrained(
         model_name = config.MODEL_NAME,
         max_seq_length = config.MAX_SEQ_LENGTH,
-        load_in_4bit = True,
+        load_in_4bit = False, # Set to False to bypass buggy 4-bit quantization on Windows
         dtype = None, # Auto-detect float16/bfloat16
         device_map = "cuda:0"
     )
