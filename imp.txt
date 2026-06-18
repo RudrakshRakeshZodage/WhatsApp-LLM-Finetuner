@@ -1,0 +1,69 @@
+pip install -r requirements.txt
+
+python preprocess.py
+
+python -c "import huggingface_hub; huggingface_hub.login()"   ///ADD tokens which has access to Read Repos
+
+python train.py
+
+https://huggingface.co/google/gemma-3-1b-it
+
+Give access for https://huggingface.co/google/gemma-3-1b-it
+
+python inference.py
+
+python -m streamlit run app.py
+
+
+
+Get-Process python
+Stop-Process -Name python -Force
+
+
+
+PS D:\Rudraksh\College\app\WhatsApp-LLM-Finetuner> 
+PS D:\Rudraksh\College\app\WhatsApp-LLM-Finetuner> python train.py
+>> 
+2026-06-18 17:08:17.953635: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-06-18 17:08:25.129695: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:From C:\Users\Rudraksh\AppData\Roaming\Python\Python313\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+Loading configuration...
+Loading dataset...
+Setting up QLoRA 4-bit quantization...
+Loading Tokenizer google/gemma-3-1b-it...
+Formatting dataset with chat template...
+Loading Model google/gemma-3-1b-it...
+C:\Users\Rudraksh\AppData\Roaming\Python\Python313\site-packages\accelerate\utils\modeling.pyt C:\actions-runner\_work\pytorch\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:28.)        
+  _ = torch.tensor([0], device=i)
+Setting up LoRA configuration...
+Configuring Training Arguments...
+D:\Rudraksh\College\app\WhatsApp-LLM-Finetuner\train.py:108: FutureWarning: The default `loss_type` will change from `'nll'` to `'chunked_nll'` in TRL 1.7. For standard models this is transparent (same math, lower memory) and no action is needed — you'll get the new default automatically on upgrade. If you use a custom model, check ahead of time that `loss_type='chunked_nll'` runs and yields the same loss as `'nll'`; if it doesn't, pin `loss_type='nll'` to keep the current behavior and please open an issue at https://github.com/huggingface/trl/issues so we can address the edge case.
+  training_args = SFTConfig(
+Initializing Trainer...
+Starting Training...
+Memory allocated before training: 1521.07 MB
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 1}.
+  2%|█                                                                     | 2/132 [00:07<08:  2%|█▎                                                     | 3/132 [00:12<08:41,  4.04s/it] 
+{'loss': 6.2561, 'grad_norm': 3.765625, 'learning_rate': 0.000199247953459871, 'entropy': 3.0421885773539543, 'mean_token_accuracy': 0.3336322488263249, 'num_tokens': 5948.0, 'epoch': 0.23}
+{'loss': 3.5641, 'grad_norm': 2.421875, 'learning_rate': 0.0001932992798834739, 'entropy': 3.310133208334446, 'mean_token_accuracy': 0.5833680737763643, 'num_tokens': 11702.0, 'epoch': 0.46}
+{'loss': 3.156, 'grad_norm': 1.9296875, 'learning_rate': 0.00018175848131515837, 'entropy': 2.94537682980299, 'mean_token_accuracy': 0.6014942113310099, 'num_tokens': 17704.0, 'epoch': 0.69}
+{'loss': 2.7005, 'grad_norm': 2.234375, 'learning_rate': 0.0001653172842953777, 'entropy': 2.603841155767441, 'mean_token_accuracy': 0.6372800502926111, 'num_tokens': 23318.0, 'epoch': 0.91}
+{'loss': 2.5782, 'grad_norm': 1.6953125, 'learning_rate': 0.00014496113296546067, 'entropy': 2.4473980443599896, 'mean_token_accuracy': 0.6471702979925351, 'num_tokens': 28775.0, 'epoch': 1.14}
+{'eval_loss': 2.368715524673462, 'eval_runtime': 5.6681, 'eval_samples_per_second': 6.881, 'eval_steps_per_second': 6.881, 'eval_entropy': 2.299467343550462, 'eval_mean_token_accuracy': 0.6643014641908499, 'eval_num_tokens': 28775.0, 'epoch': 1.14}
+{'loss': 2.5135, 'grad_norm': 2.171875, 'learning_rate': 0.00012191012401568698, 'entropy': 2.2384698130190372, 'mean_token_accuracy': 0.6544701498001814, 'num_tokens': 34786.0, 'epoch': 1.37}
+{'loss': 2.554, 'grad_norm': 2.0, 'learning_rate': 9.754587714770878e-05, 'entropy': 2.458271938562393, 'mean_token_accuracy': 0.6367549382150173, 'num_tokens': 40786.0, 'epoch': 1.59}  
+{'loss': 2.4395, 'grad_norm': 2.609375, 'learning_rate': 7.332872425251018e-05, 'entropy': 2.272639608383179, 'mean_token_accuracy': 0.6599610589444638, 'num_tokens': 46515.0, 'epoch': 1.82}
+{'loss': 2.2453, 'grad_norm': 2.421875, 'learning_rate': 5.071018077702161e-05, 'entropy': 2.0799641899573498, 'mean_token_accuracy': 0.6826770462286778, 'num_tokens': 51939.0, 'epoch': 2.05}
+{'loss': 2.2794, 'grad_norm': 2.03125, 'learning_rate': 3.104594552629331e-05, 'entropy': 2.2411606699228286, 'mean_token_accuracy': 0.6684095587581396, 'num_tokens': 58126.0, 'epoch': 2.27}
+{'eval_loss': 2.2969484329223633, 'eval_runtime': 6.5763, 'eval_samples_per_second': 5.93, 'eval_steps_per_second': 5.93, 'eval_entropy': 2.072817330177014, 'eval_mean_token_accuracy': 0.6695807522688156, 'eval_num_tokens': 58126.0, 'epoch': 2.27}
+{'loss': 2.1892, 'grad_norm': 2.359375, 'learning_rate': 1.551464347502929e-05, 'entropy': 2.0925228163599967, 'mean_token_accuracy': 0.6780497845262289, 'num_tokens': 64254.0, 'epoch': 2.5}
+{'loss': 2.244, 'grad_norm': 2.046875, 'learning_rate': 5.047181940696333e-06, 'entropy': 2.085772409290075, 'mean_token_accuracy': 0.6698625978082419, 'num_tokens': 70036.0, 'epoch': 2.73}
+{'loss': 1.9803, 'grad_norm': 2.25, 'learning_rate': 2.709543321309793e-07, 'entropy': 1.8520281054079533, 'mean_token_accuracy': 0.7161309767514468, 'num_tokens': 75376.0, 'epoch': 2.96}
+{'train_runtime': 561.9108, 'train_samples_per_second': 1.869, 'train_steps_per_second': 0.235, 'train_loss': 2.8132653706001514, 'entropy': 1.9569854523454393, 'mean_token_accuracy': 0.6851924295936312, 'num_tokens': 76311.0, 'epoch': 3.0}
+100%|█████████████████████████████████████████████████████| 132/132 [09:21<00:00,  4.26s/it] 
+Training Complete!
+Memory allocated after training: 1571.04 MB
+Saving final adapter to D:\Rudraksh\College\app\WhatsApp-LLM-Finetuner\outputs\gemma-whatsapp-lora...
+Done!
+PS D:\Rudraksh\College\app\WhatsApp-LLM-Finetuner> 

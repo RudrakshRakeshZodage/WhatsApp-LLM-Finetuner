@@ -1,0 +1,197 @@
+6/12/26, 3:22 PM - Messages and calls are end-to-end encrypted. Only people in this chat can read, listen to, or share them. *Learn more*
+6/12/26, 3:22 PM - You created this group
+6/12/26, 3:22 PM - Nidhi Xavier's and TAHA XAVIER INSTITUTE were added
+6/12/26, 3:22 PM - Rudra: https://x.com/isro/status/2065042320127611230?s=46
+6/12/26, 3:23 PM - Rudra: now is it ok?? CALL
+6/12/26, 3:23 PM - Rudra: @⁨all⁩
+6/12/26, 3:24 PM - TAHA XAVIER INSTITUTE: Abhi nhi evening tk rkh 6-7 tk
+6/12/26, 3:24 PM - Rudra: Google meet rakhte hai ??
+6/12/26, 3:24 PM - Nidhi Xavier's: Ha
+6/12/26, 3:24 PM - Rudra: PS Release kiya hai unhone
+6/12/26, 3:24 PM - TAHA XAVIER INSTITUTE: Ha chalega tera aur koi frnd tha na?
+6/12/26, 3:25 PM - Rudra: <Media omitted>
+6/12/26, 3:25 PM - Rudra: nhi abhi bass
+Tu me aur nidhi
+6/12/26, 3:25 PM - Rudra: baki see if u get someone?
+6/12/26, 3:25 PM - TAHA XAVIER INSTITUTE: Ok no worries
+6/12/26, 3:26 PM - Rudra: https://hack2skill.com/event/bah2026/#challenges
+
+There are 15 PS 
+
+@⁨all⁩ Have a look will come with ideas by 6-7
+6/12/26, 3:36 PM - Rudra: You deleted this message
+6/12/26, 6:31 PM - You added Divyash...Xaviers
+6/12/26, 6:32 PM - Rudra: @⁨all⁩ 
+We have Divyansh with us
+Will connect at 7.30pm...
+6/12/26, 6:33 PM - Rudra: He have theoretical knowledge PS no:--->1 2 3 6
+6/12/26, 6:33 PM - Rudra: Everyone tell urs as well
+6/12/26, 7:13 PM - Rudra: <Media omitted>
+6/12/26, 7:22 PM - Rudra: https://meet.google.com/egu-cojq-niq
+7.30
+6/12/26, 7:23 PM - Rudra: @⁨all⁩
+6/12/26, 7:45 PM - Nidhi Xavier's: https://gemini.google.com/share/2a6b0b8b7f50
+6/12/26, 7:55 PM - Nidhi Xavier's: 1. If you mean: "Can we use ground-based weather stations because clouds are blocking the satellite?"Yes, absolutely. In fact, doing this is what separates an average hackathon project from a winning one.Satellites use Thermal Infrared (TIR) sensors to measure heat. TIR cannot penetrate clouds. If Mumbai is covered in monsoon clouds, the satellite reads the freezing temperature of the cloud tops, completely blinding you to the urban heat island happening on the ground below.To solve this "cloud-obscured" problem, you use Data Fusion:The AI Approach: You build a machine learning model (like Random Forest or a Spatial Interpolation neural network). You train it using historical days when the sky was clear.The Inputs: You feed the AI the real-time ground IoT data (from local weather stations), elevation data, and built-up index data (NDBI).The Output: The AI predicts and "fills in" the missing thermal pixels beneath the cloud cover by correlating the ground station data with the surrounding clear-sky pixels.
+
+2. If you mean: "Should we combine Ground Truth data with Satellite data in general?"A massive yes. Relying strictly on satellites for PS1 is actually a trap because of the physics involved.Satellites measure $LST$ (Land Surface Temperature): This is how hot the physical concrete, asphalt, or rooftop is. On a summer day, an asphalt road might have an $LST$ of 60°C.Humans feel $T_a$ (Air Temperature): This is the ambient heat you feel when walking down the street, which might only be 35°C.A city planner doesn't just care about hot roofs; they care about the heat citizens are breathing and walking in.The Winning Strategy:You take open-source ground data (from India Meteorological Department weather stations or local IoT air quality monitors) and use it as your "Ground Truth." You train a deep learning regression model to ingest the satellite's $LST$ maps and mathematically translate them into high-resolution, street-level $T_a$ maps. <This message was edited>
+6/12/26, 7:57 PM - Rudra: You deleted this message
+6/12/26, 7:58 PM - Rudra: https://gemini.google.com/share/a5b535fa8cd0
+6/12/26, 8:25 PM - Nidhi Xavier's: https://hack2skill.com/event/bah2026/registration?utm_campaign=bah2026&utm_term=6a2c1ded514d2727e27105c4&utm_medium=url&isRequest=true&team_name=ChidiyaGHAR
+6/12/26, 8:31 PM - Rudra: ALL JOIN THIS
+6/12/26, 8:43 PM - Nidhi Xavier's: https://hack2skill.com/event/bah2026/dashboard/submissions/6a0d56d21f81733beca5b1b3?utm_source=hack2skill&utm_medium=homepage
+6/12/26, 9:11 PM - Rudra: @all 
+We are having 19d02h48m
+to submit our PPT on portal it includes 10 differnt sldies ok 
+:-- https://hack2skill.com/event/bah2026/dashboard/submissions/6a0d56d21f81733beca5b1b3?utm_source=hack2skill&utm_medium=homepage
+
+
+SO I want THE PS CONIRDMATION from al within 10 days
+
+DO Research...
+Can maek PPT in 3-4 days
+AND DO TRY TEST (3days more) <This message was edited>
+6/12/26, 10:05 PM - Divyash...Xaviers: @all 
+Should we keep meeting tomorrow
+6/12/26, 10:06 PM - Nidhi Xavier's: ok
+6/12/26, 10:53 PM - Rudra: Ok
+6/12/26, 10:53 PM - Rudra: After 7pm.
+6/12/26, 11:38 PM - Rudra: https://app.notion.com/p/Complete-Guide-to-Crack-ISRO-Bharatiya-Antariksh-Hackathon-2026-37c9e413777e803a908fdb1a96aa67f4?utm_source=sp_auto_dm&fbclid=PAT01DUASZKmtleHRuA2FlbQIxMABzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAafH7IrTL9jbnfO-sww9-7jtIQ5WShIvtgGRZ_gnoZx_w0mu3mFk0rmHc-HPsw_aem_jhWJG-CwEDPA6Pfc-uaHnw
+6/13/26, 3:55 PM - Rudra: Hi connect ??
+@⁨all⁩
+6/13/26, 6:49 PM - Rudra: ..
+6/13/26, 6:49 PM - Nidhi Xavier's: Yes
+6/13/26, 6:58 PM - Rudra: SAme link
+6/13/26, 7:28 PM - Rudra: <Media omitted>
+6/13/26, 7:28 PM - Rudra: > TAHA --> White line
+6/13/26, 7:28 PM - Rudra: REd->> Divyash
+6/13/26, 7:28 PM - Rudra: Rudra--> Yellow
+6/13/26, 7:28 PM - Rudra: Nidhi -> BLue
+6/13/26, 7:30 PM - You changed the group description
+6/13/26, 7:30 PM - Rudra: https://docs.google.com/document/d/12wvFGBSGt1Mb5qOAnrkAcVlVhBkVSa-NFn-nkW38tJ4/edit?usp=sharing
+6/13/26, 7:31 PM - You changed the group description
+6/13/26, 7:31 PM - Divyash...Xaviers: https://docs.google.com/document/d/15ySgoAY5ooSdvWCIKFkDW_Hc_-2doxdGJmeba9Xk01E/edit?usp=sharing
+6/13/26, 7:32 PM - Rudra: https://github.com/mattpocock/skills <This message was edited>
+6/13/26, 7:33 PM - Nidhi Xavier's: https://docs.google.com/document/d/1Yx4W_12OoUioUJEcTGeYyXgTP231ta1iLn0MBBGyD3Y/edit?usp=sharing
+6/13/26, 7:37 PM - You changed the group description
+6/13/26, 7:52 PM - Rudra: https://hack2skill.com/event/pwvirtual1/dashboard/submissions?utm_source=hack2skill&utm_medium=homepage
+6/14/26, 12:30 PM - Rudra: https://hackculture.io/hackathons/sbi-hackathon-gff-2026?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcASbMNNmdHNoBJnjuWV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABpxLgELIK_2nSCxMACI9zV2khC4i7DnLzqRQTzzXtlO1k1N9KjDl9hyl__KUa_aem_ZT2qcu-jEyZvbfwERZtQsw
+6/14/26, 12:31 PM - Rudra: @⁨all⁩ 
+All in for this one?
+6/14/26, 4:04 PM - Rudra: 
+6/14/26, 4:13 PM - Rudra: Guys some of the relatives of a Nidhi are working in ISRO so she is having a call with him like today's 7-8 p.m. so before that we have to give a questionnaire which will be asked by her side to him like what the things should be necessary and all regarding a PS so make a questionnaire.
+@⁨all⁩
+6/14/26, 4:32 PM - Nidhi Xavier's: Plz give asap
+6/14/26, 5:10 PM - Divyash...Xaviers: Can you ask them from where we get our data as Rudra said kagel we will find dataset but ask them do we have to work on raw data
+6/14/26, 5:10 PM - Divyash...Xaviers: We get from satellite
+6/14/26, 5:11 PM - Divyash...Xaviers: And what exactly mention in ps 7 cause there will be multiple noise
+6/14/26, 5:12 PM - Divyash...Xaviers: Do we actually need to work only visible light noise or all radiation
+6/14/26, 5:12 PM - Nidhi Xavier's: Anything else
+6/14/26, 5:13 PM - Divyash...Xaviers: Please ask that data one if they needed raw then we should start now
+6/14/26, 5:13 PM - Divyash...Xaviers: Also ask them we can use any aiml model?
+6/14/26, 5:14 PM - Nidhi Xavier's: Okay
+6/14/26, 5:23 PM - Rudra: What is expected in that Hackathon from Evaluator ask that also IN PPT ROUND <This message was edited>
+6/14/26, 5:27 PM - TAHA XAVIER INSTITUTE: Bhai kaggle me irrelevant data sets rehte h
+6/14/26, 5:39 PM - Nidhi Xavier's: https://hack2skill.com/event/bah2026/registration?utm_campaign=bah2026&utm_term=6a2c1ded514d2727e27105c4&utm_medium=url&isRequest=true&team_name=ChidiyaGHAR
+
+also plz join team
+6/14/26, 5:39 PM - Nidhi Xavier's: @⁨TAHA XAVIER INSTITUTE⁩ and @⁨Divyash...Xaviers⁩
+6/14/26, 5:57 PM - Divyash...Xaviers: Ya fine
+6/14/26, 5:57 PM - Divyash...Xaviers: Tho khud ka dataset bana ne mein lagne Wale hai
+6/14/26, 6:21 PM - TAHA XAVIER INSTITUTE: Chidiyaghar h team name kya?
+6/14/26, 6:31 PM - Rudra: HAA😅
+6/14/26, 6:38 PM - TAHA XAVIER INSTITUTE: ps ka doc h kya?
+6/14/26, 6:44 PM - Rudra: sab ne alag alag banaya hai fir research description me hai
+6/14/26, 6:44 PM - Rudra: .
+6/14/26, 6:44 PM - Rudra: .
+6/14/26, 6:56 PM - TAHA XAVIER INSTITUTE: ok got it
+6/14/26, 6:57 PM - TAHA XAVIER INSTITUTE: but tumlog ke end pe ye visible h?
+6/14/26, 6:58 PM - TAHA XAVIER INSTITUTE: mere end pe kisi ka bhi open nhi ho rha h
+6/14/26, 6:58 PM - Rudra: abhi tak sabne start nhi kiya
+6/14/26, 6:58 PM - Rudra: mera bhi nhi?  mera blank hai
+6/14/26, 6:58 PM - TAHA XAVIER INSTITUTE: ha sbka blank h
+6/14/26, 7:01 PM - TAHA XAVIER INSTITUTE: mere 3 ps me as far as mai depth me gya so ps 6 & 8 interesting h
+6/14/26, 7:01 PM - TAHA XAVIER INSTITUTE: apne se finalise kru koi ek topic?
+6/14/26, 7:02 PM - TAHA XAVIER INSTITUTE: So  then PS 6 farrrrr good & interesting topic from my side
+6/14/26, 7:04 PM - Rudra: ohkk
+6/14/26, 7:05 PM - Rudra: research sab data add in word file urs n make it public
+6/14/26, 7:05 PM - TAHA XAVIER INSTITUTE: yes
+6/14/26, 7:13 PM - TAHA XAVIER INSTITUTE changed the group description
+6/14/26, 7:25 PM - TAHA XAVIER INSTITUTE: i got my some info related to ps updated at my sheet,abhi wo sir ko contact nhi krte phle apne apne end se ek ek topic table pe rkhte h and usme se ek select krke final go waala procedure start krte h abhi worth it nhi h itne ps dekh ke dimaag chalana
+6/14/26, 7:26 PM - TAHA XAVIER INSTITUTE: at the end ek hi ps select krte h and start investing more time in that particualr one.
+6/14/26, 7:36 PM - Rudra: @all 
+Baat to sahi hai
+sab free kab hai for a call <This message was edited>
+6/14/26, 7:57 PM - Rudra: https://hack2skill.com/event/bah2026/dashboard/interactions?utm_source=hack2skill&utm_medium=homepage
+
+@⁨all⁩ 
+SEEE
+
+Session on 15-16
+From ISRO ppl
+6/14/26, 7:57 PM - Nidhi Xavier's: Okay
+6/15/26, 9:50 AM - Rudra: @⁨all⁩ 
+Today evening all fix 1 ps from their side and let's all discuss top 4 ps then .... <This message was edited>
+6/15/26, 9:54 AM - Rudra: Attended this as well at 11am
+6/15/26, 11:08 AM - Rudra: https://hack2skill.com/event/bah2026/dashboard/interactions?utm_source=hack2skill&utm_medium=homepage
+join
+6/15/26, 12:49 PM - Rudra: You deleted this message
+6/16/26, 11:31 AM - Rudra: @⁨Divyash...Xaviers⁩
+6/16/26, 11:32 AM - Nidhi Xavier's: Will have meet :  around 6-7pm @⁨all⁩
+6/16/26, 6:21 PM - Rudra: hi guys
+6/16/26, 6:46 PM - Rudra: @⁨all⁩ 7pm
+6/16/26, 7:04 PM - Nidhi Xavier's: .
+6/16/26, 7:05 PM - TAHA XAVIER INSTITUTE: Yes just a min travelling train pe baithke attend krta hu
+6/16/26, 7:36 PM - Rudra: . <This message was edited>
+6/16/26, 7:37 PM - Divyash...Xaviers: 1 6 12 15
+6/17/26, 10:34 AM - Rudra: 
+6/17/26, 10:37 AM - Rudra: @⁨all⁩ 
+
+Guys from my side I think so we should go with PS :-- 15 (Nidhi's ps) because it comes with the latest issues in the ISRO...
+I FEEL it is a bit unique n more chances to get selected.....
+
+I know it's hard...
+But as all of u know if we spend more time on research we can surely crack this...
+6/17/26, 10:38 AM - Rudra: all drop your comments ...
+6/17/26, 10:47 AM - Divyash...Xaviers: Am supposing to ps 12
+6/17/26, 10:51 AM - Rudra: @⁨TAHA XAVIER INSTITUTE⁩ 
+@⁨Nidhi Xavier's⁩ 
+
+Wbu? <This message was edited>
+6/17/26, 11:59 AM - Rudra: I'm ok with both 12 and 15 but I think so 12 is a bit easy as compared to 15
+6/17/26, 12:03 PM - TAHA XAVIER INSTITUTE: I m also okay
+6/17/26, 12:03 PM - TAHA XAVIER INSTITUTE: With any of these
+6/17/26, 12:12 PM - Nidhi Xavier's: Okay
+6/17/26, 12:14 PM - Nidhi Xavier's: I'm ok with anyone!
+6/17/26, 12:15 PM - Nidhi Xavier's: So is 12 final ?
+6/17/26, 12:21 PM - Divyash...Xaviers: Yes
+6/17/26, 1:06 PM - Rudra: Are we sure???
+@⁨all⁩
+6/17/26, 1:06 PM - Rudra: So 12 confirm???
+6/17/26, 1:07 PM - Rudra: Let's have a meet today or tomorrow??
+6/17/26, 1:10 PM - Rudra: https://docs.google.com/document/d/12wvFGBSGt1Mb5qOAnrkAcVlVhBkVSa-NFn-nkW38tJ4/edit?usp=drivesdk
+
+Here is 12 one u can edit in the sheet....
+
+There are references that have a look..
+6/17/26, 7:14 PM - Nidhi Xavier's: but still i will recommend 15 is better , just let me know
+6/17/26, 7:22 PM - Rudra: Yeh even I think 
+
+In terms of making the demo...
+It will be great I think so...
+I personally think we should think about this as well
+6/17/26, 7:29 PM - Rudra: @⁨all⁩ 
+Everyone thinks again about ps...
+6/17/26, 7:31 PM - Nidhi Xavier's: Please tell asap so we can start further Activities
+6/17/26, 8:28 PM - TAHA XAVIER INSTITUTE: Bhai dilemma me mt rho 
+And executable hona chaiye that's most imp
+6/17/26, 8:34 PM - Nidhi Xavier's: Alright
+6/17/26, 9:07 PM - Divyash...Xaviers: Taha and me suggesting 12
+6/17/26, 9:07 PM - Divyash...Xaviers: Guys see the time frame
+6/17/26, 9:08 PM - Divyash...Xaviers: 12 hard to do in that time frame and
+6/17/26, 9:09 PM - Divyash...Xaviers: But doable but for 15 it's next to impossible
+6/17/26, 9:09 PM - Divyash...Xaviers: Guys do you atleast know theory for ps 15 in atleast basic theory <This message was edited>
+6/17/26, 9:11 PM - Divyash...Xaviers: For 1 6 and taha and me have atleast basic theory
+6/17/26, 9:19 PM - Nidhi Xavier's: .
+6/17/26, 9:24 PM - TAHA XAVIER INSTITUTE: Bhai theory nahi executable chaiye
+6/17/26, 9:56 PM - Rudra: Ok
+6/17/26, 9:56 PM - Rudra: Got it
