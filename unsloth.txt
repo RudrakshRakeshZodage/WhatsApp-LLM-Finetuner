@@ -1,0 +1,1 @@
+irm https://unsloth.ai/install.ps1 | iex
