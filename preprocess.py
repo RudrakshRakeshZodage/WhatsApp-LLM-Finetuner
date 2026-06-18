@@ -7,15 +7,86 @@ from config import RAW_DATA_PATH, TRAIN_DATA_PATH, VAL_DATA_PATH, VAL_SPLIT_RATI
 
 def clean_message(text):
     """
-    Removes URLs, numbers, and leaked WhatsApp timestamp patterns from messages.
+    Removes URLs, emails, phone numbers, numbers, emojis/icons, 
+    and leaked WhatsApp timestamp/sender metadata.
     """
-    # Remove URLs
-    text = re.sub(r"http\S+", "", text)
-    # Remove WhatsApp timestamp continuation lines like '5/20/26, 7:43 PM - Rudra: ...'
-    text = re.sub(r"\d{1,2}/\d{1,2}/\d{2,4},\s*\d{1,2}:\d{2}\s*[\u202f]?(?:AM|PM)\s*-\s*.*", "", text)
-    # Remove standalone numbers
-    text = re.sub(r"\b\d+\b", "", text)
-    return text.strip()
+    if not text:
+        return ""
+        
+    # Replace unicode spaces and markers
+    text = text.replace('\u200e', '').replace('\u200f', '').replace('\u202f', ' ')
+    
+    cleaned_lines = []
+    for line in text.splitlines():
+        line_strip = line.strip()
+        if not line_strip:
+            continue
+            
+        # Skip system lines (including group icon updates, etc.)
+        if any(x in line_strip.lower() for x in [
+            "messages and calls are end-to-end encrypted",
+            "you deleted this message",
+            "this message was deleted",
+            "pinned a message",
+            "joined using this group",
+            "created group",
+            "changed the subject",
+            "changed this group's icon",
+            "changed group info",
+            "disappearing messages",
+            "group's icon",
+            "changed the group icon",
+            "icon",
+            "<media omitted>"
+        ]):
+            continue
+            
+        # Remove Email Addresses
+        line_strip = re.sub(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b", "", line_strip)
+        
+        # Remove URLs/Links (even without http/https or www, e.g. domain.com/path)
+        line_strip = re.sub(r"\b(?:https?://)?(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+(?:\/\S*)?\b", "", line_strip)
+        
+        # Remove phone numbers (e.g. +91 98765 43210, 98765-43210, 9876543210)
+        line_strip = re.sub(r"\b(?:\+?\d{1,3}[-.\s]?)?\(?\d{2,4}\)?[-.\s]?\d{3,4}[-.\s]?\d{3,4}\b", "", line_strip)
+        
+        # Remove stand-alone numbers of any length
+        line_strip = re.sub(r"\b\d+\b", "", line_strip)
+        
+        # Remove edited message marker
+        line_strip = re.sub(r"(?i)<\s*this message was edited\s*>", "", line_strip)
+        
+        # Remove leaked timestamp patterns and remnants:
+        line_strip = re.sub(r"(?i)//,\s*:?\s*(?:AM|PM)?\s*-\s*[^:]+:\s*", "", line_strip)
+        line_strip = re.sub(r"(?i)//,\s*:?\s*(?:AM|PM)?\s*-\s*.*", "", line_strip)
+        line_strip = re.sub(r"(?i)(?://,\s*)?\d{1,2}/\d{1,2}/\d{2,4},\s*\d{1,2}:\d{2}\s*(?:AM|PM)?\s*-\s*[^:]+:\s*", "", line_strip)
+        line_strip = re.sub(r"(?i)(?://,\s*)?\d{1,2}/\d{1,2}/\d{2,4},\s*\d{1,2}:\d{2}\s*(?:AM|PM)?\s*-\s*.*", "", line_strip)
+        
+        # Remove Emojis and Unicode Icons/Symbols
+        # Matches emoji ranges, miscellaneous symbols, dingbats, emoticons, etc.
+        line_strip = re.compile(
+            '['
+            '\U0001f300-\U0001f5ff'  # Symbols & Pictographs
+            '\U0001f600-\U0001f64f'  # Emoticons
+            '\U0001f680-\U0001f6ff'  # Transport & Map Symbols
+            '\U0001f900-\U0001f9ff'  # Supplemental Symbols
+            '\U0001fa70-\U0001faff'  # Symbols Extended
+            '\u2600-\u26ff'          # Misc Symbols
+            '\u2700-\u27bf'          # Dingbats
+            '\u2000-\u3000'          # Special spaces and punctuation range
+            ']+', 
+            re.UNICODE
+        ).sub('', line_strip)
+        
+        # Remove stand-alone punctuation fragments that often leak
+        if line_strip.strip() in ["//", "//,", ",", ":", "/", "\\", ".", "?", "!"]:
+            continue
+            
+        final_line = line_strip.strip()
+        if final_line:
+            cleaned_lines.append(final_line)
+            
+    return "\n".join(cleaned_lines).strip()
 
 def parse_whatsapp_chat(filepath):
     """
@@ -115,18 +186,51 @@ def group_consecutive_messages(parsed_data):
 def extract_conversation_pairs(grouped_data, target_persona):
     """
     Extracts User -> Target Persona conversational pairs.
-    Returns a list of (instruction, response) tuples.
+    Filters out non-conversational style elements (e.g. long copy-pastes, emails, phone numbers, code).
     """
     pairs = []
+    
+    # Regex to detect emails and phone numbers
+    email_pattern = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b")
     
     for i in range(len(grouped_data) - 1):
         msg1 = grouped_data[i]
         msg2 = grouped_data[i+1]
         
-        # If the first message is NOT the target persona, and the second message IS the target persona
+        # If msg1 is NOT target persona, and msg2 IS target persona (response)
         if msg1["sender"] != target_persona and msg2["sender"] == target_persona:
-            instruction = msg1["message"]
-            response = msg2["message"]
+            instruction = msg1["message"].strip()
+            response = msg2["message"].strip()
+            
+            # --- Style-based Filters ---
+            
+            # 1. Discard if response is empty or just punctuation
+            if not response or response in [".", ",", "?", "!", "-", "_", "...", ".."]:
+                continue
+                
+            # 2. Keep responses short and punchy (WhatsApp style). Discard long paragraphs (> 200 chars).
+            # This filters out non-conversational copy-pastes or long technical explanations.
+            if len(response) > 200:
+                continue
+                
+            # 3. Discard long instructions too (> 300 chars) to maintain clean short context
+            if len(instruction) > 300:
+                continue
+                
+            # 4. Filter out personal identifiers (emails/phone numbers) to prevent memorization
+            if email_pattern.search(response) or email_pattern.search(instruction):
+                continue
+                
+            # Simple check to filter out long number sequences (like phone numbers/account IDs)
+            digits_in_resp = sum(c.isdigit() for c in response)
+            digits_in_inst = sum(c.isdigit() for c in instruction)
+            if digits_in_resp >= 10 or digits_in_inst >= 10:
+                continue
+            
+            # 5. Filter out code blocks or markdown tables
+            if "```" in response or "```" in instruction or "|" in response:
+                continue
+                
             pairs.append((instruction, response))
             
     return pairs
